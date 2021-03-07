@@ -23,6 +23,8 @@ func GetTitle(id string, pt vangogh_types.ProductType, mt gog_types.Media) (titl
 		titleGetter, err = valueReader.StoreProduct(id)
 	case vangogh_types.AccountProducts:
 		titleGetter, err = valueReader.AccountProduct(id)
+	case vangogh_types.WishlistProducts:
+		titleGetter, err = valueReader.WishlistProduct(id)
 	case vangogh_types.Details:
 		titleGetter, err = valueReader.Details(id)
 	case vangogh_types.ApiProductsV1:

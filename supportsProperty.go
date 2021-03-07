@@ -14,6 +14,8 @@ func SupportsProperty(pt vangogh_types.ProductType, property string) bool {
 			fallthrough
 		case vangogh_types.AccountProducts:
 			fallthrough
+		case vangogh_types.WishlistProducts:
+			fallthrough
 		case vangogh_types.Details:
 			fallthrough
 		case vangogh_types.ApiProductsV1:

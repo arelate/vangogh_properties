@@ -7,11 +7,7 @@ import (
 	"github.com/arelate/vangogh_values"
 )
 
-func GetTitle(id string, pt vangogh_types.ProductType, mt gog_types.Media) (title string, err error) {
-	if !SupportsProperty(pt, TitleProperty) {
-		return "", fmt.Errorf("vangogh_properties: %s doesn't support property %s", pt, TitleProperty)
-	}
-
+func getTitle(id string, pt vangogh_types.ProductType, mt gog_types.Media) (title string, err error) {
 	var titleGetter gog_types.TitleGetter
 	valueReader, err := vangogh_values.NewReader(pt, mt)
 	if err != nil {

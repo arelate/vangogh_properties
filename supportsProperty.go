@@ -8,6 +8,21 @@ func SupportsProperty(pt vangogh_types.ProductType, property string) bool {
 	}
 
 	switch property {
+	case IdProperty:
+		switch pt {
+		case vangogh_types.StoreProducts:
+			fallthrough
+		case vangogh_types.AccountProducts:
+			fallthrough
+		case vangogh_types.WishlistProducts:
+			fallthrough
+		case vangogh_types.ApiProductsV1:
+			fallthrough
+		case vangogh_types.ApiProductsV2:
+			return true
+		default:
+			return false
+		}
 	case TitleProperty:
 		switch pt {
 		case vangogh_types.StoreProducts:
@@ -26,9 +41,23 @@ func SupportsProperty(pt vangogh_types.ProductType, property string) bool {
 			return false
 		}
 	case DeveloperProperty:
-		return false
+		switch pt {
+		case vangogh_types.StoreProducts:
+			fallthrough
+		case vangogh_types.ApiProductsV2:
+			return true
+		default:
+			return false
+		}
 	case PublisherProperty:
-		return false
+		switch pt {
+		case vangogh_types.StoreProducts:
+			fallthrough
+		case vangogh_types.ApiProductsV2:
+			return true
+		default:
+			return false
+		}
 	default:
 		return false
 	}

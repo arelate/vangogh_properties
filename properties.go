@@ -6,3 +6,18 @@ const (
 	DeveloperProperty = "developer"
 	PublisherProperty = "publisher"
 )
+
+func ValidProperty(property string) bool {
+	switch property {
+	case IdProperty:
+		fallthrough
+	case TitleProperty:
+		fallthrough
+	case DeveloperProperty:
+		fallthrough
+	case PublisherProperty:
+		return true
+	default:
+		return false
+	}
+}

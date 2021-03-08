@@ -24,6 +24,10 @@ func GetStrProperty(id string, pt vangogh_types.ProductType, mt gog_types.Media,
 		getStrProperty = getImage
 	case BoxArtProperty:
 		getStrProperty = getBoxArt
+	case BackgroundImageProperty:
+		getStrProperty = getBackgroundImage
+	case GalaxyBackgroundImageProperty:
+		getStrProperty = getGalaxyBackgroundImage
 	case LogoProperty:
 		getStrProperty = getLogo
 	case IconProperty:

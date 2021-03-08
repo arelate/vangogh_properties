@@ -7,11 +7,11 @@ import (
 	"github.com/arelate/vangogh_values"
 )
 
-func getImage(id string, pt vangogh_types.ProductType, mt gog_types.Media) (title string, err error) {
+func getImage(id string, pt vangogh_types.ProductType, mt gog_types.Media) (image string, err error) {
 	var imageGetter gog_types.ImageGetter
 	valueReader, err := vangogh_values.NewReader(pt, mt)
 	if err != nil {
-		return title, err
+		return image, err
 	}
 
 	switch pt {
@@ -24,11 +24,11 @@ func getImage(id string, pt vangogh_types.ProductType, mt gog_types.Media) (titl
 	case vangogh_types.ApiProductsV2:
 		imageGetter, err = valueReader.ApiProductV2(id)
 	default:
-		return title, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
+		return image, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
 	}
 
 	if err != nil {
-		return title, err
+		return image, err
 	}
 
 	return imageGetter.GetImage(), nil

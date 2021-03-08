@@ -7,22 +7,22 @@ import (
 	"github.com/arelate/vangogh_values"
 )
 
-func getLogo(id string, pt vangogh_types.ProductType, mt gog_types.Media) (title string, err error) {
+func getLogo(id string, pt vangogh_types.ProductType, mt gog_types.Media) (logo string, err error) {
 	var logoGetter gog_types.LogoGetter
 	valueReader, err := vangogh_values.NewReader(pt, mt)
 	if err != nil {
-		return title, err
+		return logo, err
 	}
 
 	switch pt {
 	case vangogh_types.ApiProductsV2:
 		logoGetter, err = valueReader.ApiProductV2(id)
 	default:
-		return title, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
+		return logo, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
 	}
 
 	if err != nil {
-		return title, err
+		return logo, err
 	}
 
 	return logoGetter.GetLogo(), nil

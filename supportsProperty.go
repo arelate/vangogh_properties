@@ -2,6 +2,8 @@ package vangogh_properties
 
 import "github.com/arelate/vangogh_types"
 
+// TODO: change all to a map[string]vangogh_types.ProductType
+
 func SupportsProperty(pt vangogh_types.ProductType, property string) bool {
 	if !vangogh_types.ValidProductType(pt) {
 		return false
@@ -20,6 +22,10 @@ func SupportsProperty(pt vangogh_types.ProductType, property string) bool {
 		return supportsImageProperty(pt)
 	case BoxArtProperty:
 		return supportsBoxArtProperty(pt)
+	case BackgroundImageProperty:
+		return supportsBackgroundImageProperty(pt)
+	case GalaxyBackgroundImageProperty:
+		return supportsGalaxyBackgroundImageProperty(pt)
 	case LogoProperty:
 		return supportsLogoProperty(pt)
 	case IconProperty:
@@ -128,6 +134,28 @@ func supportsIconProperty(pt vangogh_types.ProductType) bool {
 	switch pt {
 	case vangogh_types.ApiProductsV1:
 		fallthrough
+	case vangogh_types.ApiProductsV2:
+		return true
+	default:
+		return false
+	}
+}
+
+func supportsBackgroundImageProperty(pt vangogh_types.ProductType) bool {
+	switch pt {
+	case vangogh_types.Details:
+		fallthrough
+	case vangogh_types.ApiProductsV1:
+		fallthrough
+	case vangogh_types.ApiProductsV2:
+		return true
+	default:
+		return false
+	}
+}
+
+func supportsGalaxyBackgroundImageProperty(pt vangogh_types.ProductType) bool {
+	switch pt {
 	case vangogh_types.ApiProductsV2:
 		return true
 	default:

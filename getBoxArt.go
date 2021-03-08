@@ -7,22 +7,22 @@ import (
 	"github.com/arelate/vangogh_values"
 )
 
-func getBoxArt(id string, pt vangogh_types.ProductType, mt gog_types.Media) (title string, err error) {
+func getBoxArt(id string, pt vangogh_types.ProductType, mt gog_types.Media) (boxArt string, err error) {
 	var boxArtGetter gog_types.BoxArtGetter
 	valueReader, err := vangogh_values.NewReader(pt, mt)
 	if err != nil {
-		return title, err
+		return boxArt, err
 	}
 
 	switch pt {
 	case vangogh_types.ApiProductsV2:
 		boxArtGetter, err = valueReader.ApiProductV2(id)
 	default:
-		return title, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
+		return boxArt, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
 	}
 
 	if err != nil {
-		return title, err
+		return boxArt, err
 	}
 
 	return boxArtGetter.GetBoxArt(), nil

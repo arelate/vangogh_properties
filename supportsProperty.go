@@ -20,6 +20,10 @@ func SupportsProperty(pt vangogh_types.ProductType, property string) bool {
 		return supportsImageProperty(pt)
 	case BoxArtProperty:
 		return supportsBoxArtProperty(pt)
+	case LogoProperty:
+		return supportsLogoProperty(pt)
+	case IconProperty:
+		return supportsIconProperty(pt)
 	default:
 		return false
 	}
@@ -104,6 +108,26 @@ func supportsImageProperty(pt vangogh_types.ProductType) bool {
 
 func supportsBoxArtProperty(pt vangogh_types.ProductType) bool {
 	switch pt {
+	case vangogh_types.ApiProductsV2:
+		return true
+	default:
+		return false
+	}
+}
+
+func supportsLogoProperty(pt vangogh_types.ProductType) bool {
+	switch pt {
+	case vangogh_types.ApiProductsV2:
+		return true
+	default:
+		return false
+	}
+}
+
+func supportsIconProperty(pt vangogh_types.ProductType) bool {
+	switch pt {
+	case vangogh_types.ApiProductsV1:
+		fallthrough
 	case vangogh_types.ApiProductsV2:
 		return true
 	default:

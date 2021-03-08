@@ -17,6 +17,8 @@ func getPublisher(id string, pt vangogh_types.ProductType, mt gog_types.Media) (
 	switch pt {
 	case vangogh_types.StoreProducts:
 		publisherGetter, err = valueReader.StoreProduct(id)
+	case vangogh_types.WishlistProducts:
+		publisherGetter, err = valueReader.WishlistProduct(id)
 	case vangogh_types.ApiProductsV2:
 		publisherGetter, err = valueReader.ApiProductV2(id)
 	default:

@@ -17,10 +17,12 @@ func getDeveloper(id string, pt vangogh_types.ProductType, mt gog_types.Media) (
 	switch pt {
 	case vangogh_types.StoreProducts:
 		developerGetter, err = valueReader.StoreProduct(id)
+	case vangogh_types.WishlistProducts:
+		developerGetter, err = valueReader.WishlistProduct(id)
 	case vangogh_types.ApiProductsV2:
 		developerGetter, err = valueReader.ApiProductV2(id)
 	default:
-		return developer, fmt.Errorf("unsupported product type %s", pt)
+		return developer, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
 	}
 
 	if err != nil {

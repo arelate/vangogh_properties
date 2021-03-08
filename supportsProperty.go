@@ -99,3 +99,12 @@ func supportsImageProperty(pt vangogh_types.ProductType) bool {
 		return false
 	}
 }
+
+func supportsBoxArtProperty(pt vangogh_types.ProductType) bool {
+	switch pt {
+	case vangogh_types.ApiProductsV2:
+		return true
+	default:
+		return false
+	}
+}

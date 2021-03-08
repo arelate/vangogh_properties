@@ -28,7 +28,7 @@ func getTitle(id string, pt vangogh_types.ProductType, mt gog_types.Media) (titl
 	case vangogh_types.ApiProductsV2:
 		titleGetter, err = valueReader.ApiProductV2(id)
 	default:
-		return title, fmt.Errorf("unsupported product type %s", pt)
+		return title, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
 	}
 
 	if err != nil {

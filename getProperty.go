@@ -22,6 +22,8 @@ func GetStrProperty(id string, pt vangogh_types.ProductType, mt gog_types.Media,
 		getStrProperty = getPublisher
 	case ImageProperty:
 		getStrProperty = getImage
+	case BoxArtProperty:
+		getStrProperty = getBoxArt
 	default:
 		return value, fmt.Errorf("vangogh_properties: unknown property %s", property)
 	}

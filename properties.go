@@ -6,6 +6,7 @@ const (
 	DeveloperProperty = "developer"
 	PublisherProperty = "publisher"
 	ImageProperty     = "image"
+	BoxArtProperty    = "box-art"
 )
 
 func ValidProperty(property string) bool {
@@ -19,6 +20,8 @@ func ValidProperty(property string) bool {
 	case PublisherProperty:
 		fallthrough
 	case ImageProperty:
+		fallthrough
+	case BoxArtProperty:
 		return true
 	default:
 		return false

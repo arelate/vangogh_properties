@@ -22,7 +22,7 @@ func getPublisher(id string, pt vangogh_types.ProductType, mt gog_types.Media) (
 	case vangogh_types.ApiProductsV2:
 		publisherGetter, err = valueReader.ApiProductV2(id)
 	default:
-		return publisher, fmt.Errorf("unsupported product type %s", pt)
+		return publisher, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
 	}
 
 	if err != nil {

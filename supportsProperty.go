@@ -18,6 +18,8 @@ func SupportsProperty(pt vangogh_types.ProductType, property string) bool {
 		return supportsPublisherProperty(pt)
 	case ImageProperty:
 		return supportsImageProperty(pt)
+	case BoxArtProperty:
+		return supportsBoxArtProperty(pt)
 	default:
 		return false
 	}

@@ -5,6 +5,7 @@ const (
 	TitleProperty     = "title"
 	DeveloperProperty = "developer"
 	PublisherProperty = "publisher"
+	ImageProperty     = "image"
 )
 
 func ValidProperty(property string) bool {
@@ -16,6 +17,8 @@ func ValidProperty(property string) bool {
 	case DeveloperProperty:
 		fallthrough
 	case PublisherProperty:
+		fallthrough
+	case ImageProperty:
 		return true
 	default:
 		return false

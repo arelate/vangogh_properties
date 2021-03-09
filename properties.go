@@ -14,28 +14,10 @@ const (
 )
 
 func ValidProperty(property string) bool {
-	switch property {
-	case IdProperty:
-		fallthrough
-	case TitleProperty:
-		fallthrough
-	case DeveloperProperty:
-		fallthrough
-	case PublisherProperty:
-		fallthrough
-	case ImageProperty:
-		fallthrough
-	case BoxArtProperty:
-		fallthrough
-	case BackgroundImageProperty:
-		fallthrough
-	case GalaxyBackgroundImageProperty:
-		fallthrough
-	case LogoProperty:
-		fallthrough
-	case IconProperty:
-		return true
-	default:
-		return false
+	for _, p := range AllProperties() {
+		if p == property {
+			return true
+		}
 	}
+	return false
 }

@@ -2,21 +2,15 @@ package vangogh_properties
 
 import "github.com/arelate/vangogh_types"
 
+var downloadTypeProperties = map[vangogh_types.DownloadType]string{
+	vangogh_types.Image:                 ImageProperty,
+	vangogh_types.BoxArt:                BoxArtProperty,
+	vangogh_types.BackgroundImage:       BackgroundImageProperty,
+	vangogh_types.GalaxyBackgroundImage: GalaxyBackgroundImageProperty,
+	vangogh_types.Logo:                  LogoProperty,
+	vangogh_types.Icon:                  IconProperty,
+}
+
 func FromDownloadType(dt vangogh_types.DownloadType) string {
-	switch dt {
-	case vangogh_types.Image:
-		return ImageProperty
-	case vangogh_types.BoxArt:
-		return BoxArtProperty
-	case vangogh_types.BackgroundImage:
-		return BackgroundImageProperty
-	case vangogh_types.GalaxyBackgroundImage:
-		return GalaxyBackgroundImageProperty
-	case vangogh_types.Logo:
-		return LogoProperty
-	case vangogh_types.Icon:
-		return IconProperty
-	default:
-		return ""
-	}
+	return downloadTypeProperties[dt]
 }

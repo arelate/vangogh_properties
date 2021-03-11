@@ -1,13 +1,26 @@
 package vangogh_properties
 
-import "github.com/arelate/vangogh_types"
+import (
+	"github.com/arelate/vangogh_types"
+)
 
 var productTypeProperties = map[vangogh_types.ProductType][]string{
-	vangogh_types.StoreProducts:    {IdProperty, TitleProperty, DeveloperProperty, PublisherProperty, ImageProperty},
+	vangogh_types.StoreProducts: {
+		IdProperty,
+		TitleProperty,
+		DeveloperProperty,
+		PublisherProperty,
+		ImageProperty,
+		ScreenshotsProperty},
 	vangogh_types.AccountProducts:  {IdProperty, TitleProperty, ImageProperty},
 	vangogh_types.WishlistProducts: {IdProperty, TitleProperty, DeveloperProperty, PublisherProperty, ImageProperty},
 	vangogh_types.Details:          {TitleProperty, BackgroundImageProperty},
-	vangogh_types.ApiProductsV1:    {IdProperty, TitleProperty, IconProperty, BackgroundImageProperty},
+	vangogh_types.ApiProductsV1: {
+		IdProperty,
+		TitleProperty,
+		IconProperty,
+		BackgroundImageProperty,
+		ScreenshotsProperty},
 	vangogh_types.ApiProductsV2: {
 		IdProperty,
 		TitleProperty,
@@ -19,6 +32,7 @@ var productTypeProperties = map[vangogh_types.ProductType][]string{
 		IconProperty,
 		BackgroundImageProperty,
 		GalaxyBackgroundImageProperty,
+		ScreenshotsProperty,
 	},
 }
 

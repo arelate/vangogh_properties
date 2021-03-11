@@ -11,6 +11,7 @@ const (
 	GalaxyBackgroundImageProperty = "galaxy-background-image"
 	IconProperty                  = "icon"
 	LogoProperty                  = "logo"
+	ScreenshotsProperty           = "screenshots"
 )
 
 func ValidProperty(property string) bool {

@@ -2,7 +2,7 @@ package vangogh_properties
 
 func AllProperties() []string {
 	return []string{
-		IdProperty, // must be first to be removed when not needed
+		IdProperty, // must be first, to be removed when not needed
 		TitleProperty,
 		DeveloperProperty,
 		PublisherProperty,
@@ -12,6 +12,7 @@ func AllProperties() []string {
 		GalaxyBackgroundImageProperty,
 		IconProperty,
 		LogoProperty,
+		ScreenshotsProperty,
 	}
 }
 

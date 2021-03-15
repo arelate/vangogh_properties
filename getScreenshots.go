@@ -3,6 +3,7 @@ package vangogh_properties
 import (
 	"fmt"
 	"github.com/arelate/gog_types"
+	"github.com/arelate/gog_urls"
 	"github.com/arelate/vangogh_types"
 	"github.com/arelate/vangogh_values"
 	"strings"
@@ -30,5 +31,11 @@ func getScreenshots(id string, pt vangogh_types.ProductType, mt gog_types.Media)
 		return screenshots, err
 	}
 
-	return strings.Join(screenshotsGetter.GetScreenshots(), ","), nil
+	screenshotsUrls := screenshotsGetter.GetScreenshots()
+	imageIds := make([]string, 0, len(screenshotsUrls))
+	for _, scr := range screenshotsUrls {
+		imageIds = append(imageIds, gog_urls.ImageId(scr))
+	}
+
+	return strings.Join(imageIds, ","), nil
 }

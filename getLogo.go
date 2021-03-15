@@ -3,6 +3,7 @@ package vangogh_properties
 import (
 	"fmt"
 	"github.com/arelate/gog_types"
+	"github.com/arelate/gog_urls"
 	"github.com/arelate/vangogh_types"
 	"github.com/arelate/vangogh_values"
 )
@@ -25,5 +26,5 @@ func getLogo(id string, pt vangogh_types.ProductType, mt gog_types.Media) (logo 
 		return logo, err
 	}
 
-	return logoGetter.GetLogo(), nil
+	return gog_urls.ImageId(logoGetter.GetLogo()), nil
 }

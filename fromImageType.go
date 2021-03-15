@@ -15,3 +15,12 @@ var imageTypeProperties = map[vangogh_types.ImageType]string{
 func FromImageType(it vangogh_types.ImageType) string {
 	return imageTypeProperties[it]
 }
+
+func ToImageType(property string) vangogh_types.ImageType {
+	for it, prop := range imageTypeProperties {
+		if prop == property {
+			return it
+		}
+	}
+	return vangogh_types.UnknownImageType
+}

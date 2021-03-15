@@ -23,3 +23,15 @@ func AllStashedProperties() []string {
 	all[0] = all[len(all)-1]
 	return all[:len(all)-1]
 }
+
+func AllImageIdProperties() []string {
+	return []string{
+		ImageProperty,
+		BoxArtProperty,
+		BackgroundProperty,
+		GalaxyBackgroundProperty,
+		IconProperty,
+		LogoProperty,
+		ScreenshotsProperty,
+	}
+}

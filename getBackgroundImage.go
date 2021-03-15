@@ -8,27 +8,27 @@ import (
 	"github.com/arelate/vangogh_values"
 )
 
-func getBackgroundImage(id string, pt vangogh_types.ProductType, mt gog_types.Media) (backgroundImage string, err error) {
-	var backgroundImageGetter gog_types.BackgroundImageGetter
+func getBackground(id string, pt vangogh_types.ProductType, mt gog_types.Media) (background string, err error) {
+	var backgroundGetter gog_types.BackgroundGetter
 	valueReader, err := vangogh_values.NewReader(pt, mt)
 	if err != nil {
-		return backgroundImage, err
+		return background, err
 	}
 
 	switch pt {
 	case vangogh_types.Details:
-		backgroundImageGetter, err = valueReader.Details(id)
+		backgroundGetter, err = valueReader.Details(id)
 	case vangogh_types.ApiProductsV1:
-		backgroundImageGetter, err = valueReader.ApiProductV1(id)
+		backgroundGetter, err = valueReader.ApiProductV1(id)
 	case vangogh_types.ApiProductsV2:
-		backgroundImageGetter, err = valueReader.ApiProductV2(id)
+		backgroundGetter, err = valueReader.ApiProductV2(id)
 	default:
-		return backgroundImage, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
+		return background, fmt.Errorf("vangogh_properties: unsupported product type %s", pt)
 	}
 
 	if err != nil {
-		return backgroundImage, err
+		return background, err
 	}
 
-	return gog_urls.ImageId(backgroundImageGetter.GetBackgroundImage()), nil
+	return gog_urls.ImageId(backgroundGetter.GetBackground()), nil
 }

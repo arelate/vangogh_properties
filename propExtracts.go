@@ -6,10 +6,10 @@ import (
 	"log"
 )
 
-func PropStashes(properties []string) (map[string]*froth.Stash, error) {
+func PropExtracts(properties []string) (map[string]*froth.Stash, error) {
 
-	propStashes := make(map[string]*froth.Stash, len(properties))
-	distStashUrl := vangogh_urls.DistilledStashUrl()
+	propExtracts := make(map[string]*froth.Stash, len(properties))
+	extractsUrl := vangogh_urls.Extracts()
 
 	for _, prop := range properties {
 		if prop == IdProperty {
@@ -19,12 +19,14 @@ func PropStashes(properties []string) (map[string]*froth.Stash, error) {
 			log.Printf("vangogh: invalid property %s", prop)
 			continue
 		}
-		stash, err := froth.NewStash(distStashUrl, prop)
+
+		stash, err := froth.NewStash(extractsUrl, prop)
 		if err != nil {
-			return propStashes, err
+			return propExtracts, err
 		}
-		propStashes[prop] = stash
+
+		propExtracts[prop] = stash
 	}
 
-	return propStashes, nil
+	return propExtracts, nil
 }

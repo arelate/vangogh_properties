@@ -20,12 +20,12 @@ func AllImageIdProperties() []string {
 	}
 }
 
-func AllStashedProperties() []string {
+func AllExtractedProperties() []string {
 	all := AllTextProperties()
 	return append(all, AllImageIdProperties()...)
 }
 
 func AllProperties() []string {
 	all := []string{IdProperty}
-	return append(all, AllStashedProperties()...)
+	return append(all, AllExtractedProperties()...)
 }

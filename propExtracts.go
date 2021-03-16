@@ -20,12 +20,12 @@ func PropExtracts(properties []string) (map[string]*froth.Stash, error) {
 			continue
 		}
 
-		stash, err := froth.NewStash(extractsUrl, prop)
+		extracts, err := froth.NewStash(extractsUrl, prop)
 		if err != nil {
 			return propExtracts, err
 		}
 
-		propExtracts[prop] = stash
+		propExtracts[prop] = extracts
 	}
 
 	return propExtracts, nil

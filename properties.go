@@ -13,7 +13,7 @@ const (
 	LogoProperty             = "logo"
 	ScreenshotsProperty      = "screenshots"
 	AllTextProperties        = "text"
-	AllImageProperties       = "image"
+	AllImageIdProperties     = "image-id"
 )
 
 func ValidProperty(property string) bool {

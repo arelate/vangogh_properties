@@ -9,7 +9,7 @@ import (
 func PropExtracts(properties []string) (map[string]*froth.Stash, error) {
 
 	propExtracts := make(map[string]*froth.Stash, len(properties))
-	extractsUrl := vangogh_urls.Extracts()
+	extractsDir := vangogh_urls.ExtractsDir()
 
 	for _, prop := range properties {
 		if prop == IdProperty {
@@ -20,7 +20,7 @@ func PropExtracts(properties []string) (map[string]*froth.Stash, error) {
 			continue
 		}
 
-		extracts, err := froth.NewStash(extractsUrl, prop)
+		extracts, err := froth.NewStash(extractsDir, prop)
 		if err != nil {
 			return propExtracts, err
 		}

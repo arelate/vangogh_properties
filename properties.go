@@ -12,10 +12,12 @@ const (
 	IconProperty             = "icon"
 	LogoProperty             = "logo"
 	ScreenshotsProperty      = "screenshots"
+	AllTextProperties        = "text"
+	AllImageProperties       = "image"
 )
 
 func ValidProperty(property string) bool {
-	for _, p := range AllProperties() {
+	for _, p := range All() {
 		if p == property {
 			return true
 		}

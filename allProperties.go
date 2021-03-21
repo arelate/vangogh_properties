@@ -1,6 +1,6 @@
 package vangogh_properties
 
-func AllTextProperties() []string {
+func AllText() []string {
 	return []string{
 		TitleProperty,
 		DeveloperProperty,
@@ -8,7 +8,7 @@ func AllTextProperties() []string {
 	}
 }
 
-func AllImageIdProperties() []string {
+func AllImageId() []string {
 	return []string{
 		ImageProperty,
 		BoxArtProperty,
@@ -20,12 +20,12 @@ func AllImageIdProperties() []string {
 	}
 }
 
-func AllExtractedProperties() []string {
-	all := AllTextProperties()
-	return append(all, AllImageIdProperties()...)
+func AllExtracted() []string {
+	all := AllText()
+	return append(all, AllImageId()...)
 }
 
-func AllProperties() []string {
+func All() []string {
 	all := []string{IdProperty}
-	return append(all, AllExtractedProperties()...)
+	return append(all, AllExtracted()...)
 }

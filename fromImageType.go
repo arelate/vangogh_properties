@@ -1,26 +1,26 @@
 package vangogh_properties
 
-import "github.com/arelate/vangogh_types"
+import "github.com/arelate/vangogh_images"
 
-var imageTypeProperties = map[vangogh_types.ImageType]string{
-	vangogh_types.Image:            ImageProperty,
-	vangogh_types.BoxArt:           BoxArtProperty,
-	vangogh_types.Background:       BackgroundProperty,
-	vangogh_types.GalaxyBackground: GalaxyBackgroundProperty,
-	vangogh_types.Logo:             LogoProperty,
-	vangogh_types.Icon:             IconProperty,
-	vangogh_types.Screenshots:      ScreenshotsProperty,
+var imageTypeProperties = map[vangogh_images.ImageType]string{
+	vangogh_images.Image:            ImageProperty,
+	vangogh_images.BoxArt:           BoxArtProperty,
+	vangogh_images.Background:       BackgroundProperty,
+	vangogh_images.GalaxyBackground: GalaxyBackgroundProperty,
+	vangogh_images.Logo:             LogoProperty,
+	vangogh_images.Icon:             IconProperty,
+	vangogh_images.Screenshots:      ScreenshotsProperty,
 }
 
-func FromImageType(it vangogh_types.ImageType) string {
+func FromImageType(it vangogh_images.ImageType) string {
 	return imageTypeProperties[it]
 }
 
-func ToImageType(property string) vangogh_types.ImageType {
+func ToImageType(property string) vangogh_images.ImageType {
 	for it, prop := range imageTypeProperties {
 		if prop == property {
 			return it
 		}
 	}
-	return vangogh_types.UnknownImageType
+	return vangogh_images.Unknown
 }

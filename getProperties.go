@@ -3,12 +3,16 @@ package vangogh_properties
 import (
 	"github.com/arelate/gog_types"
 	"github.com/arelate/gog_urls"
-	"github.com/arelate/vangogh_types"
+	"github.com/arelate/vangogh_products"
 	"github.com/arelate/vangogh_values"
 	"strings"
 )
 
-func GetProperties(id string, reader *vangogh_values.ValueReader, pt vangogh_types.ProductType, properties []string) (propValues map[string]string, err error) {
+func GetProperties(
+	id string,
+	reader *vangogh_values.ValueReader,
+	pt vangogh_products.ProductType,
+	properties []string) (propValues map[string]string, err error) {
 	value, err := reader.ProductType(id, pt)
 	return fillProperties(value, properties), err
 }

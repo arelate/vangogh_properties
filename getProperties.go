@@ -44,8 +44,10 @@ func getPropertyValue(value interface{}, property string) interface{} {
 		return getTitle(value)
 	case ScreenshotsProperty:
 		return getScreenshots(value)
+	case RatingProperty:
+		return getRating(value)
 	default:
-		return ""
+		return nil
 	}
 }
 
@@ -132,4 +134,12 @@ func getScreenshots(value interface{}) []string {
 		return imageIds
 	}
 	return []string{}
+}
+
+func getRating(value interface{}) int {
+	ratingGetter := value.(gog_types.RatingGetter)
+	if ratingGetter != nil {
+		return ratingGetter.GetRating()
+	}
+	return 0
 }

@@ -9,6 +9,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		IdProperty,
 		TitleProperty,
 		ImageProperty,
+		RatingProperty,
 	},
 	vangogh_products.ApiProductsV1: {
 		IdProperty,
@@ -41,6 +42,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		PublisherProperty,
 		ImageProperty,
 		ScreenshotsProperty,
+		RatingProperty,
 	},
 }
 

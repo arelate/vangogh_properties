@@ -8,6 +8,12 @@ func AllText() []string {
 	}
 }
 
+func AllNumerical() []string {
+	return []string{
+		RatingProperty,
+	}
+}
+
 func AllImageId() []string {
 	return []string{
 		ImageProperty,
@@ -22,6 +28,7 @@ func AllImageId() []string {
 
 func AllExtracted() []string {
 	all := AllText()
+	all = append(all, AllNumerical()...)
 	return append(all, AllImageId()...)
 }
 

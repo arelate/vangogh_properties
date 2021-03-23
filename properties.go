@@ -14,6 +14,7 @@ const (
 	ScreenshotsProperty      = "screenshots"
 	AllTextProperties        = "text"
 	AllImageIdProperties     = "image-id"
+	RatingProperty           = "rating"
 )
 
 func ValidProperty(property string) bool {

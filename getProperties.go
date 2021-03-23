@@ -4,25 +4,27 @@ import (
 	"github.com/arelate/gog_types"
 	"github.com/arelate/gog_urls"
 	"github.com/arelate/vangogh_values"
+	"strconv"
+	"strings"
 )
 
 func GetProperties(
 	id string,
 	reader *vangogh_values.ValueReader,
-	properties []string) (propValues map[string]interface{}, err error) {
+	properties []string) (propValues map[string]string, err error) {
 	value, err := reader.ProductType(id)
 	return fillProperties(value, properties), err
 }
 
-func fillProperties(value interface{}, properties []string) map[string]interface{} {
-	propValues := make(map[string]interface{}, 0)
+func fillProperties(value interface{}, properties []string) map[string]string {
+	propValues := make(map[string]string, 0)
 	for _, prop := range properties {
 		propValues[prop] = getPropertyValue(value, prop)
 	}
 	return propValues
 }
 
-func getPropertyValue(value interface{}, property string) interface{} {
+func getPropertyValue(value interface{}, property string) string {
 	switch property {
 	case BackgroundProperty:
 		return getBackground(value)
@@ -47,7 +49,7 @@ func getPropertyValue(value interface{}, property string) interface{} {
 	case RatingProperty:
 		return getRating(value)
 	default:
-		return nil
+		return ""
 	}
 }
 
@@ -123,7 +125,7 @@ func getLogo(value interface{}) string {
 	return ""
 }
 
-func getScreenshots(value interface{}) []string {
+func getScreenshots(value interface{}) string {
 	screenshotsGetter := value.(gog_types.ScreenshotsGetter)
 	if screenshotsGetter != nil {
 		screenshots := screenshotsGetter.GetScreenshots()
@@ -131,15 +133,15 @@ func getScreenshots(value interface{}) []string {
 		for _, scr := range screenshots {
 			imageIds = append(imageIds, gog_urls.ImageId(scr))
 		}
-		return imageIds
+		return strings.Join(imageIds, ",")
 	}
-	return []string{}
+	return ""
 }
 
-func getRating(value interface{}) int {
+func getRating(value interface{}) string {
 	ratingGetter := value.(gog_types.RatingGetter)
 	if ratingGetter != nil {
-		return ratingGetter.GetRating()
+		return strconv.Itoa(ratingGetter.GetRating())
 	}
-	return 0
+	return "0"
 }

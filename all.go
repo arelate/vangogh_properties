@@ -36,3 +36,14 @@ func All() []string {
 	all := []string{IdProperty}
 	return append(all, AllExtracted()...)
 }
+
+func AllQuery() map[string][]string {
+	return map[string][]string{
+		AllTextProperties:    AllText(),
+		AllImageIdProperties: AllImageId(),
+		TitleProperty:        {TitleProperty},
+		DeveloperProperty:    {DeveloperProperty},
+		PublisherProperty:    {PublisherProperty},
+		RatingProperty:       {RatingProperty},
+	}
+}

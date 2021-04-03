@@ -54,3 +54,13 @@ func SupportsProperty(pt vangogh_products.ProductType, property string) bool {
 	}
 	return false
 }
+
+func Supported(pt vangogh_products.ProductType, properties []string) []string {
+	supProps := make([]string, 0, len(properties))
+	for _, prop := range properties {
+		if SupportsProperty(pt, prop) {
+			supProps = append(supProps, prop)
+		}
+	}
+	return supProps
+}

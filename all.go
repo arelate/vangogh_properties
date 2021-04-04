@@ -3,7 +3,7 @@ package vangogh_properties
 func AllText() []string {
 	return []string{
 		TitleProperty,
-		DeveloperProperty,
+		DevelopersProperty,
 		PublisherProperty,
 	}
 }
@@ -42,7 +42,7 @@ func AllQuery() map[string][]string {
 		AllTextProperties:    AllText(),
 		AllImageIdProperties: AllImageId(),
 		TitleProperty:        {TitleProperty},
-		DeveloperProperty:    {DeveloperProperty},
+		DevelopersProperty:   {DevelopersProperty},
 		PublisherProperty:    {PublisherProperty},
 		RatingProperty:       {RatingProperty},
 	}

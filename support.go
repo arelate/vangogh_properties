@@ -21,7 +21,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 	vangogh_products.ApiProductsV2: {
 		IdProperty,
 		TitleProperty,
-		DeveloperProperty,
+		DevelopersProperty,
 		PublisherProperty,
 		ImageProperty,
 		BoxArtProperty,
@@ -38,7 +38,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 	vangogh_products.StoreProducts: {
 		IdProperty,
 		TitleProperty,
-		DeveloperProperty,
+		DevelopersProperty,
 		PublisherProperty,
 		ImageProperty,
 		ScreenshotsProperty,

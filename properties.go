@@ -3,7 +3,7 @@ package vangogh_properties
 const (
 	IdProperty               = "id"
 	TitleProperty            = "title"
-	DeveloperProperty        = "developer"
+	DevelopersProperty       = "developers"
 	PublisherProperty        = "publisher"
 	ImageProperty            = "image"
 	BoxArtProperty           = "box-art"

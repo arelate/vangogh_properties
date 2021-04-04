@@ -30,8 +30,8 @@ func getPropertyValues(value interface{}, property string) []string {
 		return getBackground(value)
 	case BoxArtProperty:
 		return getBoxArt(value)
-	case DeveloperProperty:
-		return getDeveloper(value)
+	case DevelopersProperty:
+		return getDevelopers(value)
 	case GalaxyBackgroundProperty:
 		return getGalaxyBackground(value)
 	case IconProperty:
@@ -61,10 +61,10 @@ func getTitle(value interface{}) []string {
 	return []string{}
 }
 
-func getDeveloper(value interface{}) []string {
-	developerGetter := value.(gog_types.DeveloperGetter)
+func getDevelopers(value interface{}) []string {
+	developerGetter := value.(gog_types.DevelopersGetter)
 	if developerGetter != nil {
-		return []string{developerGetter.GetDeveloper()}
+		return developerGetter.GetDevelopers()
 	}
 	return []string{}
 }

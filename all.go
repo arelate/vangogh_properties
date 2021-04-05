@@ -5,6 +5,7 @@ func AllText() []string {
 		TitleProperty,
 		DevelopersProperty,
 		PublisherProperty,
+		IncludesGamesProperty,
 	}
 }
 

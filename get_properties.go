@@ -4,7 +4,6 @@ import (
 	"github.com/arelate/gog_types"
 	"github.com/arelate/gog_urls"
 	"github.com/arelate/vangogh_values"
-	"strconv"
 )
 
 func GetProperties(
@@ -27,102 +26,52 @@ func fillProperties(value interface{}, properties []string) map[string][]string 
 func getPropertyValues(value interface{}, property string) []string {
 	switch property {
 	case BackgroundProperty:
-		return getBackground(value)
+		return getImageIdSlice(value.(gog_types.BackgroundGetter).GetBackground)
 	case BoxArtProperty:
-		return getBoxArt(value)
+		return getImageIdSlice(value.(gog_types.BoxArtGetter).GetBoxArt)
 	case DevelopersProperty:
-		return getDevelopers(value)
+		return value.(gog_types.DevelopersGetter).GetDevelopers()
 	case GalaxyBackgroundProperty:
-		return getGalaxyBackground(value)
+		return getImageIdSlice(value.(gog_types.GalaxyBackgroundGetter).GetGalaxyBackground)
 	case IconProperty:
-		return getIcon(value)
+		return getImageIdSlice(value.(gog_types.IconGetter).GetIcon)
 	case ImageProperty:
-		return getImage(value)
+		return getImageIdSlice(value.(gog_types.ImageGetter).GetImage)
 	case LogoProperty:
-		return getLogo(value)
+		return getImageIdSlice(value.(gog_types.LogoGetter).GetLogo)
 	case PublisherProperty:
-		return getPublisher(value)
+		return getSlice(value.(gog_types.PublisherGetter).GetPublisher)
 	case TitleProperty:
-		return getTitle(value)
+		return getSlice(value.(gog_types.TitleGetter).GetTitle)
 	case ScreenshotsProperty:
 		return getScreenshots(value)
 	case RatingProperty:
-		return getRating(value)
+		return getSlice(value.(gog_types.RatingGetter).GetRating)
+	case IncludesGamesProperty:
+		return value.(gog_types.IncludesGamesGetter).GetIncludesGames()
 	default:
 		return []string{}
 	}
 }
 
-func getTitle(value interface{}) []string {
-	titleGetter := value.(gog_types.TitleGetter)
-	if titleGetter != nil {
-		return []string{titleGetter.GetTitle()}
+func getSlice(stringer func() string) []string {
+	values := make([]string, 0)
+	if stringer != nil {
+		val := stringer()
+		if val != "" {
+			values = append(values, val)
+		}
 	}
-	return []string{}
+	return values
 }
 
-func getDevelopers(value interface{}) []string {
-	developerGetter := value.(gog_types.DevelopersGetter)
-	if developerGetter != nil {
-		return developerGetter.GetDevelopers()
+func getImageIdSlice(stringer func() string) []string {
+	strings := getSlice(stringer)
+	imageIds := make([]string, 0, len(strings))
+	for _, str := range strings {
+		imageIds = append(imageIds, gog_urls.ImageId(str))
 	}
-	return []string{}
-}
-
-func getPublisher(value interface{}) []string {
-	publisherGetter := value.(gog_types.PublisherGetter)
-	if publisherGetter != nil {
-		return []string{publisherGetter.GetPublisher()}
-	}
-	return []string{}
-}
-
-func getBackground(value interface{}) []string {
-	backgroundGetter := value.(gog_types.BackgroundGetter)
-	if backgroundGetter != nil {
-		return []string{gog_urls.ImageId(backgroundGetter.GetBackground())}
-	}
-	return []string{}
-}
-
-func getGalaxyBackground(value interface{}) []string {
-	galaxyBackgroundGetter := value.(gog_types.GalaxyBackgroundGetter)
-	if galaxyBackgroundGetter != nil {
-		return []string{gog_urls.ImageId(galaxyBackgroundGetter.GetGalaxyBackground())}
-	}
-	return []string{}
-}
-
-func getBoxArt(value interface{}) []string {
-	boxArtGetter := value.(gog_types.BoxArtGetter)
-	if boxArtGetter != nil {
-		return []string{gog_urls.ImageId(boxArtGetter.GetBoxArt())}
-	}
-	return []string{}
-}
-
-func getIcon(value interface{}) []string {
-	iconGetter := value.(gog_types.IconGetter)
-	if iconGetter != nil {
-		return []string{gog_urls.ImageId(iconGetter.GetIcon())}
-	}
-	return []string{}
-}
-
-func getImage(value interface{}) []string {
-	imageGetter := value.(gog_types.ImageGetter)
-	if imageGetter != nil {
-		return []string{gog_urls.ImageId(imageGetter.GetImage())}
-	}
-	return []string{}
-}
-
-func getLogo(value interface{}) []string {
-	logoGetter := value.(gog_types.LogoGetter)
-	if logoGetter != nil {
-		return []string{gog_urls.ImageId(logoGetter.GetLogo())}
-	}
-	return []string{}
+	return imageIds
 }
 
 func getScreenshots(value interface{}) []string {
@@ -134,14 +83,6 @@ func getScreenshots(value interface{}) []string {
 			imageIds = append(imageIds, gog_urls.ImageId(scr))
 		}
 		return imageIds
-	}
-	return []string{}
-}
-
-func getRating(value interface{}) []string {
-	ratingGetter := value.(gog_types.RatingGetter)
-	if ratingGetter != nil {
-		return []string{strconv.Itoa(ratingGetter.GetRating())}
 	}
 	return []string{}
 }

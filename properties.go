@@ -15,6 +15,7 @@ const (
 	AllTextProperties        = "text"
 	AllImageIdProperties     = "image-id"
 	RatingProperty           = "rating"
+	IncludesGamesProperty    = "includes-games"
 )
 
 func ValidProperty(property string) bool {

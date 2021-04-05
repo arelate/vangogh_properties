@@ -30,6 +30,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		BackgroundProperty,
 		GalaxyBackgroundProperty,
 		ScreenshotsProperty,
+		IncludesGamesProperty,
 	},
 	vangogh_products.Details: {
 		TitleProperty,

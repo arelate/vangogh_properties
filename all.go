@@ -15,6 +15,7 @@ const (
 	RatingProperty           = "rating"
 	IncludesGamesProperty    = "includes-games"
 	GenresProperty           = "genres"
+	FeaturesProperty         = "features"
 	AllTextProperties        = "text"
 	AllImageIdProperties     = "image-id"
 )
@@ -26,6 +27,7 @@ func AllText() []string {
 		PublisherProperty,
 		IncludesGamesProperty,
 		GenresProperty,
+		FeaturesProperty,
 	}
 }
 
@@ -66,6 +68,7 @@ func AllQuery() map[string][]string {
 		DevelopersProperty:   {DevelopersProperty},
 		PublisherProperty:    {PublisherProperty},
 		GenresProperty:       {GenresProperty},
+		FeaturesProperty:     {FeaturesProperty},
 		RatingProperty:       {RatingProperty},
 	}
 }

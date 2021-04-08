@@ -32,10 +32,12 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		ScreenshotsProperty,
 		IncludesGamesProperty,
 		GenresProperty,
+		FeaturesProperty,
 	},
 	vangogh_products.Details: {
 		TitleProperty,
 		BackgroundProperty,
+		FeaturesProperty,
 	},
 	vangogh_products.StoreProducts: {
 		IdProperty,

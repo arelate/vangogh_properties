@@ -33,6 +33,8 @@ func getPropertyValues(value interface{}, property string) []string {
 		return value.(gog_types.DevelopersGetter).GetDevelopers()
 	case GalaxyBackgroundProperty:
 		return getImageIdSlice(value.(gog_types.GalaxyBackgroundGetter).GetGalaxyBackground)
+	case GenresProperty:
+		return value.(gog_types.GenresGetter).GetGenres()
 	case IconProperty:
 		return getImageIdSlice(value.(gog_types.IconGetter).GetIcon)
 	case ImageProperty:

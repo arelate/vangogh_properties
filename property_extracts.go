@@ -15,7 +15,7 @@ func PropExtracts(properties []string) (map[string]*froth.Stash, error) {
 		if prop == IdProperty {
 			continue
 		}
-		if !ValidProperty(prop) {
+		if !Valid(prop) {
 			log.Printf("vangogh: invalid property %s", prop)
 			continue
 		}

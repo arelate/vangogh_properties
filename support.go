@@ -31,6 +31,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		GalaxyBackgroundProperty,
 		ScreenshotsProperty,
 		IncludesGamesProperty,
+		GenresProperty,
 	},
 	vangogh_products.Details: {
 		TitleProperty,
@@ -44,6 +45,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		ImageProperty,
 		ScreenshotsProperty,
 		RatingProperty,
+		GenresProperty,
 	},
 }
 

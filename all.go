@@ -1,11 +1,31 @@
 package vangogh_properties
 
+const (
+	IdProperty               = "id"
+	TitleProperty            = "title"
+	DevelopersProperty       = "developers"
+	PublisherProperty        = "publisher"
+	ImageProperty            = "image"
+	BoxArtProperty           = "box-art"
+	BackgroundProperty       = "background"
+	GalaxyBackgroundProperty = "galaxy-background"
+	IconProperty             = "icon"
+	LogoProperty             = "logo"
+	ScreenshotsProperty      = "screenshots"
+	RatingProperty           = "rating"
+	IncludesGamesProperty    = "includes-games"
+	GenresProperty           = "genres"
+	AllTextProperties        = "text"
+	AllImageIdProperties     = "image-id"
+)
+
 func AllText() []string {
 	return []string{
 		TitleProperty,
 		DevelopersProperty,
 		PublisherProperty,
 		IncludesGamesProperty,
+		GenresProperty,
 	}
 }
 
@@ -45,6 +65,7 @@ func AllQuery() map[string][]string {
 		TitleProperty:        {TitleProperty},
 		DevelopersProperty:   {DevelopersProperty},
 		PublisherProperty:    {PublisherProperty},
+		GenresProperty:       {GenresProperty},
 		RatingProperty:       {RatingProperty},
 	}
 }

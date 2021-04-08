@@ -69,3 +69,12 @@ func AllQuery() map[string][]string {
 		RatingProperty:       {RatingProperty},
 	}
 }
+
+func AllSearchable() []string {
+	allQuery := AllQuery()
+	keys := make([]string, 0, len(allQuery))
+	for key, _ := range allQuery {
+		keys = append(keys, key)
+	}
+	return keys
+}

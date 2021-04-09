@@ -16,6 +16,7 @@ const (
 	IncludesGamesProperty    = "includes-games"
 	GenresProperty           = "genres"
 	FeaturesProperty         = "features"
+	SeriesProperty           = "series"
 	AllTextProperties        = "text"
 	AllImageIdProperties     = "image-id"
 )
@@ -28,6 +29,7 @@ func AllText() []string {
 		IncludesGamesProperty,
 		GenresProperty,
 		FeaturesProperty,
+		SeriesProperty,
 	}
 }
 
@@ -61,16 +63,15 @@ func All() []string {
 }
 
 func AllQuery() map[string][]string {
-	return map[string][]string{
-		AllTextProperties:    AllText(),
-		AllImageIdProperties: AllImageId(),
-		TitleProperty:        {TitleProperty},
-		DevelopersProperty:   {DevelopersProperty},
-		PublisherProperty:    {PublisherProperty},
-		GenresProperty:       {GenresProperty},
-		FeaturesProperty:     {FeaturesProperty},
-		RatingProperty:       {RatingProperty},
+	query := make(map[string][]string)
+
+	query[AllTextProperties] = AllText()
+	query[AllImageIdProperties] = AllImageId()
+	for _, textProp := range AllText() {
+		query[textProp] = []string{textProp}
 	}
+
+	return query
 }
 
 func AllSearchable() []string {

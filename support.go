@@ -33,6 +33,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		IncludesGamesProperty,
 		GenresProperty,
 		FeaturesProperty,
+		SeriesProperty,
 	},
 	vangogh_products.Details: {
 		TitleProperty,

@@ -39,6 +39,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		TitleProperty,
 		BackgroundProperty,
 		FeaturesProperty,
+		TagIdProperty,
 	},
 	vangogh_products.StoreProducts: {
 		IdProperty,

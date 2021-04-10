@@ -17,8 +17,10 @@ const (
 	GenresProperty           = "genres"
 	FeaturesProperty         = "features"
 	SeriesProperty           = "series"
-	AllTextProperties        = "text"
-	AllImageIdProperties     = "image-id"
+	TagIdProperty            = "tag-id"
+	//TagNameProperty          = "tag-name"
+	AllTextProperties    = "text"
+	AllImageIdProperties = "image-id"
 )
 
 func AllText() []string {
@@ -30,12 +32,8 @@ func AllText() []string {
 		GenresProperty,
 		FeaturesProperty,
 		SeriesProperty,
-	}
-}
-
-func AllNumerical() []string {
-	return []string{
 		RatingProperty,
+		TagIdProperty,
 	}
 }
 
@@ -53,7 +51,6 @@ func AllImageId() []string {
 
 func AllExtracted() []string {
 	all := AllText()
-	all = append(all, AllNumerical()...)
 	return append(all, AllImageId()...)
 }
 

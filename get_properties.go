@@ -33,28 +33,30 @@ func getPropertyValues(value interface{}, property string) []string {
 		return value.(gog_types.DevelopersGetter).GetDevelopers()
 	case FeaturesProperty:
 		return value.(gog_types.FeaturesGetter).GetFeatures()
-	case GalaxyBackgroundProperty:
-		return getImageIdSlice(value.(gog_types.GalaxyBackgroundGetter).GetGalaxyBackground)
-	case GenresProperty:
-		return value.(gog_types.GenresGetter).GetGenres()
 	case IconProperty:
 		return getImageIdSlice(value.(gog_types.IconGetter).GetIcon)
 	case ImageProperty:
 		return getImageIdSlice(value.(gog_types.ImageGetter).GetImage)
+	case IncludesGamesProperty:
+		return value.(gog_types.IncludesGamesGetter).GetIncludesGames()
+	case GalaxyBackgroundProperty:
+		return getImageIdSlice(value.(gog_types.GalaxyBackgroundGetter).GetGalaxyBackground)
+	case GenresProperty:
+		return value.(gog_types.GenresGetter).GetGenres()
 	case LogoProperty:
 		return getImageIdSlice(value.(gog_types.LogoGetter).GetLogo)
 	case PublisherProperty:
 		return getSlice(value.(gog_types.PublisherGetter).GetPublisher)
-	case SeriesProperty:
-		return getSlice(value.(gog_types.SeriesGetter).GetSeries)
-	case TitleProperty:
-		return getSlice(value.(gog_types.TitleGetter).GetTitle)
-	case ScreenshotsProperty:
-		return getScreenshots(value)
 	case RatingProperty:
 		return getSlice(value.(gog_types.RatingGetter).GetRating)
-	case IncludesGamesProperty:
-		return value.(gog_types.IncludesGamesGetter).GetIncludesGames()
+	case SeriesProperty:
+		return getSlice(value.(gog_types.SeriesGetter).GetSeries)
+	case ScreenshotsProperty:
+		return getScreenshots(value)
+	case TagIdProperty:
+		return value.(gog_types.TagIdsGetter).GetTagIds()
+	case TitleProperty:
+		return getSlice(value.(gog_types.TitleGetter).GetTitle)
 	default:
 		return []string{}
 	}

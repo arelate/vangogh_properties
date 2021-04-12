@@ -10,6 +10,7 @@ var imageTypeProperties = map[vangogh_images.ImageType]string{
 	vangogh_images.Logo:             LogoProperty,
 	vangogh_images.Icon:             IconProperty,
 	vangogh_images.Screenshots:      ScreenshotsProperty,
+	vangogh_images.Video:            VideoIdProperty,
 }
 
 func FromImageType(it vangogh_images.ImageType) string {

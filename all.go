@@ -12,13 +12,13 @@ const (
 	IconProperty             = "icon"
 	LogoProperty             = "logo"
 	ScreenshotsProperty      = "screenshots"
+	VideoIdProperty          = "video-id"
 	RatingProperty           = "rating"
 	IncludesGamesProperty    = "includes-games"
 	GenresProperty           = "genres"
 	FeaturesProperty         = "features"
 	SeriesProperty           = "series"
 	TagIdProperty            = "tag-id"
-	//TagNameProperty          = "tag-name"
 	AllTextProperties    = "text"
 	AllImageIdProperties = "image-id"
 )
@@ -46,6 +46,7 @@ func AllImageId() []string {
 		IconProperty,
 		LogoProperty,
 		ScreenshotsProperty,
+		VideoIdProperty,
 	}
 }
 

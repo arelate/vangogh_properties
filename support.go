@@ -17,6 +17,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		IconProperty,
 		BackgroundProperty,
 		ScreenshotsProperty,
+		VideoIdProperty,
 	},
 	vangogh_products.ApiProductsV2: {
 		IdProperty,
@@ -34,6 +35,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		GenresProperty,
 		FeaturesProperty,
 		SeriesProperty,
+		VideoIdProperty,
 	},
 	vangogh_products.Details: {
 		TitleProperty,
@@ -50,6 +52,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		ScreenshotsProperty,
 		RatingProperty,
 		GenresProperty,
+		VideoIdProperty,
 	},
 }
 

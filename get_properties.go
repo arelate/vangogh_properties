@@ -57,6 +57,8 @@ func getPropertyValues(value interface{}, property string) []string {
 		return value.(gog_types.TagIdsGetter).GetTagIds()
 	case TitleProperty:
 		return getSlice(value.(gog_types.TitleGetter).GetTitle)
+	case VideoIdProperty:
+		return value.(gog_types.VideoIdsGetter).GetVideoIds()
 	default:
 		return []string{}
 	}

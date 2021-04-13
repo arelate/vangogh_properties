@@ -17,7 +17,7 @@ const (
 	GenresProperty           = "genres"
 	FeaturesProperty         = "features"
 	SeriesProperty           = "series"
-	TagIdProperty            = "tag-id"
+	TagIdProperty            = "tag"
 	VideoIdProperty          = "video-id"
 	OperatingSystemsProperty = "os"
 	AllTextProperties        = "text"

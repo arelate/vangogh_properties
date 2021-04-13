@@ -10,6 +10,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		TitleProperty,
 		ImageProperty,
 		RatingProperty,
+		OperatingSystemsProperty,
 	},
 	vangogh_products.ApiProductsV1: {
 		IdProperty,
@@ -18,6 +19,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		BackgroundProperty,
 		ScreenshotsProperty,
 		VideoIdProperty,
+		OperatingSystemsProperty,
 	},
 	vangogh_products.ApiProductsV2: {
 		IdProperty,
@@ -36,6 +38,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		FeaturesProperty,
 		SeriesProperty,
 		VideoIdProperty,
+		OperatingSystemsProperty,
 	},
 	vangogh_products.Details: {
 		TitleProperty,
@@ -53,6 +56,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		RatingProperty,
 		GenresProperty,
 		VideoIdProperty,
+		OperatingSystemsProperty,
 	},
 }
 

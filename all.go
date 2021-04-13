@@ -12,15 +12,16 @@ const (
 	IconProperty             = "icon"
 	LogoProperty             = "logo"
 	ScreenshotsProperty      = "screenshots"
-	VideoIdProperty          = "video-id"
 	RatingProperty           = "rating"
 	IncludesGamesProperty    = "includes-games"
 	GenresProperty           = "genres"
 	FeaturesProperty         = "features"
 	SeriesProperty           = "series"
 	TagIdProperty            = "tag-id"
-	AllTextProperties    = "text"
-	AllImageIdProperties = "image-id"
+	VideoIdProperty          = "video-id"
+	OperatingSystemsProperty = "os"
+	AllTextProperties        = "text"
+	AllImageIdProperties     = "image-id"
 )
 
 func AllText() []string {
@@ -34,6 +35,7 @@ func AllText() []string {
 		SeriesProperty,
 		RatingProperty,
 		TagIdProperty,
+		OperatingSystemsProperty,
 	}
 }
 
@@ -46,12 +48,18 @@ func AllImageId() []string {
 		IconProperty,
 		LogoProperty,
 		ScreenshotsProperty,
+	}
+}
+
+func AllVideoId() []string {
+	return []string{
 		VideoIdProperty,
 	}
 }
 
 func AllExtracted() []string {
 	all := AllText()
+	all = append(all, AllVideoId()...)
 	return append(all, AllImageId()...)
 }
 
@@ -68,6 +76,7 @@ func AllQuery() map[string][]string {
 	for _, textProp := range AllText() {
 		query[textProp] = []string{textProp}
 	}
+	query[VideoIdProperty] = []string{VideoIdProperty}
 
 	return query
 }

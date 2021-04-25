@@ -1,14 +1,14 @@
 package vangogh_properties
 
 func Shorthand(property string) string {
-	for _, tp := range AllText() {
+	for _, tp := range Text() {
 		if tp == property {
-			return AllTextProperties
+			return TextProperties
 		}
 	}
-	for _, ip := range AllImageId() {
+	for _, ip := range ImageId() {
 		if ip == property {
-			return AllImageIdProperties
+			return ImageIdProperties
 		}
 	}
 	return ""

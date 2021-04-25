@@ -1,6 +1,6 @@
 package vangogh_properties
 
-var joinNotDesirable = AllImageId()
+var joinNotDesirable = ImageId()
 
 func JoinPreferred(property string) bool {
 	for _, nd := range joinNotDesirable {

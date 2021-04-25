@@ -20,11 +20,12 @@ const (
 	TagIdProperty            = "tag"
 	VideoIdProperty          = "video-id"
 	OperatingSystemsProperty = "os"
-	AllTextProperties        = "text"
-	AllImageIdProperties     = "image-id"
+	TextProperties           = "text"
+	ImageIdProperties        = "image-id"
+	DLCsProperty             = "dlcs"
 )
 
-func AllText() []string {
+func Text() []string {
 	return []string{
 		TitleProperty,
 		DevelopersProperty,
@@ -36,10 +37,11 @@ func AllText() []string {
 		RatingProperty,
 		TagIdProperty,
 		OperatingSystemsProperty,
+		DLCsProperty,
 	}
 }
 
-func AllImageId() []string {
+func ImageId() []string {
 	return []string{
 		ImageProperty,
 		BoxArtProperty,
@@ -51,29 +53,29 @@ func AllImageId() []string {
 	}
 }
 
-func AllVideoId() []string {
+func VideoId() []string {
 	return []string{
 		VideoIdProperty,
 	}
 }
 
-func AllExtracted() []string {
-	all := AllText()
-	all = append(all, AllVideoId()...)
-	return append(all, AllImageId()...)
+func Extracted() []string {
+	all := Text()
+	all = append(all, VideoId()...)
+	return append(all, ImageId()...)
 }
 
 func All() []string {
 	all := []string{IdProperty}
-	return append(all, AllExtracted()...)
+	return append(all, Extracted()...)
 }
 
-func AllQuery() map[string][]string {
+func Query() map[string][]string {
 	query := make(map[string][]string)
 
-	query[AllTextProperties] = AllText()
-	query[AllImageIdProperties] = AllImageId()
-	for _, textProp := range AllText() {
+	query[TextProperties] = Text()
+	query[ImageIdProperties] = ImageId()
+	for _, textProp := range Text() {
 		query[textProp] = []string{textProp}
 	}
 	query[VideoIdProperty] = []string{VideoIdProperty}
@@ -81,11 +83,26 @@ func AllQuery() map[string][]string {
 	return query
 }
 
-func AllSearchable() []string {
-	allQuery := AllQuery()
-	keys := make([]string, 0, len(allQuery))
-	for key, _ := range allQuery {
+func Searchable() []string {
+	query := Query()
+	keys := make([]string, 0, len(query))
+	//TextProperties needs to be the first one
+	keys = append(keys, TextProperties)
+	for key, _ := range query {
+		if key == TextProperties {
+			continue
+		}
 		keys = append(keys, key)
 	}
 	return keys
+}
+
+func Digestible() []string {
+	return []string{
+		DevelopersProperty,
+		PublisherProperty,
+		GenresProperty,
+		FeaturesProperty,
+		SeriesProperty,
+	}
 }

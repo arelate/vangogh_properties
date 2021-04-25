@@ -20,6 +20,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		ScreenshotsProperty,
 		VideoIdProperty,
 		OperatingSystemsProperty,
+		DLCsProperty,
 	},
 	vangogh_products.ApiProductsV2: {
 		IdProperty,
@@ -39,6 +40,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		SeriesProperty,
 		VideoIdProperty,
 		OperatingSystemsProperty,
+		DLCsProperty,
 	},
 	vangogh_products.Details: {
 		TitleProperty,

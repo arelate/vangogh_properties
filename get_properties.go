@@ -31,6 +31,8 @@ func getPropertyValues(value interface{}, property string) []string {
 		return getImageIdSlice(value.(gog_types.BoxArtGetter).GetBoxArt)
 	case DevelopersProperty:
 		return value.(gog_types.DevelopersGetter).GetDevelopers()
+	case DLCsProperty:
+		return value.(gog_types.DLCsGetter).GetDLCs()
 	case FeaturesProperty:
 		return value.(gog_types.FeaturesGetter).GetFeatures()
 	case IconProperty:

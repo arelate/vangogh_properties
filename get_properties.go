@@ -53,6 +53,8 @@ func getPropertyValues(value interface{}, property string) []string {
 		return getSlice(value.(gog_types.PublisherGetter).GetPublisher)
 	case RatingProperty:
 		return getSlice(value.(gog_types.RatingGetter).GetRating)
+	case RequiresGamesProperty:
+		return value.(gog_types.RequiresGamesGetter).GetRequiredGames()
 	case SeriesProperty:
 		return getSlice(value.(gog_types.SeriesGetter).GetSeries)
 	case ScreenshotsProperty:

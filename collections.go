@@ -14,6 +14,7 @@ const (
 	ScreenshotsProperty      = "screenshots"
 	RatingProperty           = "rating"
 	IncludesGamesProperty    = "includes-games"
+	RequiresGamesProperty    = "requires-games"
 	GenresProperty           = "genres"
 	FeaturesProperty         = "features"
 	SeriesProperty           = "series"
@@ -31,6 +32,7 @@ func Text() []string {
 		DevelopersProperty,
 		PublisherProperty,
 		IncludesGamesProperty,
+		RequiresGamesProperty,
 		GenresProperty,
 		FeaturesProperty,
 		SeriesProperty,

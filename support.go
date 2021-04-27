@@ -20,7 +20,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		ScreenshotsProperty,
 		VideoIdProperty,
 		OperatingSystemsProperty,
-		DLCsProperty,
+		//DLCsProperty,
 	},
 	vangogh_products.ApiProductsV2: {
 		IdProperty,
@@ -35,6 +35,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		GalaxyBackgroundProperty,
 		ScreenshotsProperty,
 		IncludesGamesProperty,
+		RequiresGamesProperty,
 		GenresProperty,
 		FeaturesProperty,
 		SeriesProperty,

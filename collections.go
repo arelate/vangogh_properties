@@ -1,29 +1,29 @@
 package vangogh_properties
 
 const (
-	IdProperty               = "id"
-	TitleProperty            = "title"
-	DevelopersProperty       = "developers"
-	PublisherProperty        = "publisher"
-	ImageProperty            = "image"
-	BoxArtProperty           = "box-art"
-	BackgroundProperty       = "background"
-	GalaxyBackgroundProperty = "galaxy-background"
-	IconProperty             = "icon"
-	LogoProperty             = "logo"
-	ScreenshotsProperty      = "screenshots"
-	RatingProperty           = "rating"
-	IncludesGamesProperty    = "includes-games"
-	RequiresGamesProperty    = "requires-games"
-	GenresProperty           = "genres"
-	FeaturesProperty         = "features"
-	SeriesProperty           = "series"
-	TagIdProperty            = "tag"
-	VideoIdProperty          = "video-id"
-	OperatingSystemsProperty = "os"
-	TextProperties           = "text"
-	ImageIdProperties        = "image-id"
-	DLCsProperty             = "dlcs"
+	IdProperty                = "id"
+	TitleProperty             = "title"
+	DevelopersProperty        = "developers"
+	PublisherProperty         = "publisher"
+	ImageProperty             = "image"
+	BoxArtProperty            = "box-art"
+	BackgroundProperty        = "background"
+	GalaxyBackgroundProperty  = "galaxy-background"
+	IconProperty              = "icon"
+	LogoProperty              = "logo"
+	ScreenshotsProperty       = "screenshots"
+	RatingProperty            = "rating"
+	IncludesGamesProperty     = "includes-games"
+	IsRequiredByGamesProperty = "is-required-by-games"
+	RequiresGamesProperty     = "requires-games"
+	GenresProperty            = "genres"
+	FeaturesProperty          = "features"
+	SeriesProperty            = "series"
+	TagIdProperty             = "tag"
+	VideoIdProperty           = "video-id"
+	OperatingSystemsProperty  = "os"
+	TextProperties            = "text"
+	ImageIdProperties         = "image-id"
 )
 
 func Text() []string {
@@ -33,13 +33,13 @@ func Text() []string {
 		PublisherProperty,
 		IncludesGamesProperty,
 		RequiresGamesProperty,
+		IsRequiredByGamesProperty,
 		GenresProperty,
 		FeaturesProperty,
 		SeriesProperty,
 		RatingProperty,
 		TagIdProperty,
 		OperatingSystemsProperty,
-		DLCsProperty,
 	}
 }
 

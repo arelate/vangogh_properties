@@ -20,7 +20,6 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		ScreenshotsProperty,
 		VideoIdProperty,
 		OperatingSystemsProperty,
-		//DLCsProperty,
 	},
 	vangogh_products.ApiProductsV2: {
 		IdProperty,

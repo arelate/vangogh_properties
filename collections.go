@@ -24,6 +24,7 @@ const (
 	OperatingSystemsProperty  = "os"
 	TextProperties            = "text"
 	ImageIdProperties         = "image-id"
+	TypesProperty             = "types"
 )
 
 func Text() []string {
@@ -64,7 +65,15 @@ func VideoId() []string {
 func Extracted() []string {
 	all := Text()
 	all = append(all, VideoId()...)
+	all = append(all, Computed()...)
 	return append(all, ImageId()...)
+}
+
+//TODO:consider deprecating this and use owned instead
+func Computed() []string {
+	return []string{
+		TypesProperty,
+	}
 }
 
 func All() []string {
@@ -72,31 +81,11 @@ func All() []string {
 	return append(all, Extracted()...)
 }
 
-func Query() map[string][]string {
-	query := make(map[string][]string)
-
-	query[TextProperties] = Text()
-	query[ImageIdProperties] = ImageId()
-	for _, textProp := range Text() {
-		query[textProp] = []string{textProp}
-	}
-	query[VideoIdProperty] = []string{VideoIdProperty}
-
-	return query
-}
-
 func Searchable() []string {
-	query := Query()
-	keys := make([]string, 0, len(query))
-	//TextProperties needs to be the first one
-	keys = append(keys, TextProperties)
-	for key, _ := range query {
-		if key == TextProperties {
-			continue
-		}
-		keys = append(keys, key)
-	}
-	return keys
+	searchable := make([]string, 0, len(Extracted())+2)
+	searchable = append(searchable, TextProperties, ImageIdProperties)
+	searchable = append(searchable, Extracted()...)
+	return searchable
 }
 
 func Digestible() []string {

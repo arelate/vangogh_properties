@@ -14,14 +14,17 @@ const (
 	ScreenshotsProperty       = "screenshots"
 	RatingProperty            = "rating"
 	IncludesGamesProperty     = "includes-games"
-	IsRequiredByGamesProperty = "is-required-by-games"
+	IsIncludedByGamesProperty = "is-included-by-games"
 	RequiresGamesProperty     = "requires-games"
+	IsRequiredByGamesProperty = "is-required-by-games"
 	GenresProperty            = "genres"
 	FeaturesProperty          = "features"
 	SeriesProperty            = "series"
 	TagIdProperty             = "tag"
+	TagNameProperty           = "tag-name"
 	VideoIdProperty           = "video-id"
 	OperatingSystemsProperty  = "os"
+	LanguageCodesProperty     = "language-codes"
 	TextProperties            = "text"
 	ImageIdProperties         = "image-id"
 	TypesProperty             = "types"
@@ -33,6 +36,7 @@ func Text() []string {
 		DevelopersProperty,
 		PublisherProperty,
 		IncludesGamesProperty,
+		IsIncludedByGamesProperty,
 		RequiresGamesProperty,
 		IsRequiredByGamesProperty,
 		GenresProperty,
@@ -41,6 +45,7 @@ func Text() []string {
 		RatingProperty,
 		TagIdProperty,
 		OperatingSystemsProperty,
+		LanguageCodesProperty,
 	}
 }
 
@@ -95,5 +100,6 @@ func Digestible() []string {
 		GenresProperty,
 		FeaturesProperty,
 		SeriesProperty,
+		TagNameProperty,
 	}
 }

@@ -2,7 +2,12 @@ package vangogh_properties
 
 func joinNotDesirable() []string {
 	jnd := ImageId()
-	jnd = append(jnd, IsRequiredByGamesProperty, IncludesGamesProperty, RequiresGamesProperty)
+	jnd = append(jnd,
+		IncludesGamesProperty,
+		IsIncludedByGamesProperty,
+		RequiresGamesProperty,
+		IsRequiredByGamesProperty,
+	)
 	return jnd
 }
 

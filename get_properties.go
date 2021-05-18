@@ -39,12 +39,16 @@ func getPropertyValues(value interface{}, property string) []string {
 		return getImageIdSlice(value.(gog_types.ImageGetter).GetImage)
 	case IncludesGamesProperty:
 		return value.(gog_types.IncludesGamesGetter).GetIncludesGames()
+	case IsIncludedByGamesProperty:
+		return value.(gog_types.IsIncludedInGamesGetter).GetIsIncludedInGames()
 	case IsRequiredByGamesProperty:
 		return value.(gog_types.IsRequiredByGamesGetter).GetIsRequiredByGames()
 	case GalaxyBackgroundProperty:
 		return getImageIdSlice(value.(gog_types.GalaxyBackgroundGetter).GetGalaxyBackground)
 	case GenresProperty:
 		return value.(gog_types.GenresGetter).GetGenres()
+	case LanguageCodesProperty:
+		return value.(gog_types.LanguageCodesGetter).GetLanguageCodes()
 	case LogoProperty:
 		return getImageIdSlice(value.(gog_types.LogoGetter).GetLogo)
 	case OperatingSystemsProperty:
@@ -54,7 +58,7 @@ func getPropertyValues(value interface{}, property string) []string {
 	case RatingProperty:
 		return getSlice(value.(gog_types.RatingGetter).GetRating)
 	case RequiresGamesProperty:
-		return value.(gog_types.RequiresGamesGetter).GetRequiredGames()
+		return value.(gog_types.RequiresGamesGetter).GetRequiresGames()
 	case SeriesProperty:
 		return getSlice(value.(gog_types.SeriesGetter).GetSeries)
 	case ScreenshotsProperty:

@@ -73,9 +73,12 @@ func SupportsProperty(pt vangogh_products.ProductType, property string) bool {
 	return false
 }
 
-func Supported(pt vangogh_products.ProductType, properties []string) map[string]bool {
+func Supported(pt vangogh_products.ProductType, properties map[string]bool) map[string]bool {
 	supported := make(map[string]bool, 0)
-	for _, prop := range properties {
+	for prop, ok := range properties {
+		if !ok {
+			continue
+		}
 		if SupportsProperty(pt, prop) {
 			supported[prop] = true
 		}

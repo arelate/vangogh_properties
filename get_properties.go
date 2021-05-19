@@ -9,15 +9,18 @@ import (
 func GetProperties(
 	id string,
 	reader *vangogh_values.ValueReader,
-	properties []string) (propValues map[string][]string, err error) {
+	properties map[string]bool) (propValues map[string][]string, err error) {
 	supProps := Supported(reader.ProductType(), properties)
 	value, err := reader.ReadValue(id)
 	return fillProperties(value, supProps), err
 }
 
-func fillProperties(value interface{}, properties []string) map[string][]string {
+func fillProperties(value interface{}, properties map[string]bool) map[string][]string {
 	propValues := make(map[string][]string, 0)
-	for _, prop := range properties {
+	for prop, ok := range properties {
+		if !ok {
+			continue
+		}
 		propValues[prop] = getPropertyValues(value, prop)
 	}
 	return propValues

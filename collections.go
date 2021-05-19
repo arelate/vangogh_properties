@@ -24,7 +24,8 @@ const (
 	TagNameProperty           = "tag-name"
 	VideoIdProperty           = "video-id"
 	OperatingSystemsProperty  = "os"
-	LanguageCodesProperty     = "language-codes"
+	LanguageCodesProperty     = "languages"
+	LanguageNamesProperty     = "language-names"
 	TextProperties            = "text"
 	ImageIdProperties         = "image-id"
 	TypesProperty             = "types"
@@ -101,5 +102,6 @@ func Digestible() []string {
 		FeaturesProperty,
 		SeriesProperty,
 		TagNameProperty,
+		LanguageCodesProperty,
 	}
 }

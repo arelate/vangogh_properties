@@ -24,8 +24,8 @@ const (
 	TagNameProperty           = "tag-name"
 	VideoIdProperty           = "video-id"
 	OperatingSystemsProperty  = "os"
-	LanguageCodesProperty     = "languages"
-	LanguageNamesProperty     = "language-names"
+	LanguageCodesProperty     = "lang"
+	LanguageNameProperty      = "lang-name"
 	TextProperties            = "text"
 	AllTextProperties         = "all-text"
 	ImageIdProperties         = "image-id"
@@ -80,7 +80,6 @@ func Extracted() []string {
 	return append(all, ImageId()...)
 }
 
-//TODO:consider deprecating this and use owned instead
 func Computed() []string {
 	return []string{
 		TypesProperty,
@@ -107,6 +106,6 @@ func Digestible() []string {
 		FeaturesProperty,
 		SeriesProperty,
 		TagNameProperty,
-		LanguageCodesProperty,
+		LanguageNameProperty,
 	}
 }

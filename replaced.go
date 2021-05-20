@@ -8,6 +8,7 @@ var replacementProperties = map[string]string{
 	RequiresGamesProperty:     TitleProperty,
 	IsRequiredByGamesProperty: TitleProperty,
 	TagIdProperty:             TagNameProperty,
+	LanguageCodesProperty:     LanguageNameProperty,
 }
 
 const replOrigValuesFormat = "%s (%s)"

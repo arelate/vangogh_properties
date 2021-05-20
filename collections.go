@@ -27,6 +27,7 @@ const (
 	LanguageCodesProperty     = "languages"
 	LanguageNamesProperty     = "language-names"
 	TextProperties            = "text"
+	AllTextProperties         = "all-text"
 	ImageIdProperties         = "image-id"
 	TypesProperty             = "types"
 )
@@ -36,6 +37,11 @@ func Text() []string {
 		TitleProperty,
 		DevelopersProperty,
 		PublisherProperty,
+	}
+}
+
+func AllText() []string {
+	return append(Text(),
 		IncludesGamesProperty,
 		IsIncludedByGamesProperty,
 		RequiresGamesProperty,
@@ -46,8 +52,7 @@ func Text() []string {
 		RatingProperty,
 		TagIdProperty,
 		OperatingSystemsProperty,
-		LanguageCodesProperty,
-	}
+		LanguageCodesProperty)
 }
 
 func ImageId() []string {
@@ -69,7 +74,7 @@ func VideoId() []string {
 }
 
 func Extracted() []string {
-	all := Text()
+	all := AllText()
 	all = append(all, VideoId()...)
 	all = append(all, Computed()...)
 	return append(all, ImageId()...)

@@ -2,6 +2,7 @@ package vangogh_properties
 
 var collapsedExpanded = map[string][]string{
 	TextProperties:    Text(),
+	AllTextProperties: AllText(),
 	ImageIdProperties: ImageId(),
 }
 

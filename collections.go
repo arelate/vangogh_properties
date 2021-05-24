@@ -26,6 +26,7 @@ const (
 	OperatingSystemsProperty  = "os"
 	LanguageCodesProperty     = "lang"
 	LanguageNameProperty      = "lang-name"
+	SlugProperty              = "slug"
 	TextProperties            = "text"
 	AllTextProperties         = "all-text"
 	ImageIdProperties         = "image-id"
@@ -52,7 +53,9 @@ func AllText() []string {
 		RatingProperty,
 		TagIdProperty,
 		OperatingSystemsProperty,
-		LanguageCodesProperty)
+		LanguageCodesProperty,
+		SlugProperty,
+	)
 }
 
 func ImageId() []string {

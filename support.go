@@ -11,6 +11,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		ImageProperty,
 		RatingProperty,
 		OperatingSystemsProperty,
+		SlugProperty,
 	},
 	vangogh_products.ApiProductsV1: {
 		IdProperty,
@@ -20,6 +21,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		ScreenshotsProperty,
 		VideoIdProperty,
 		OperatingSystemsProperty,
+		SlugProperty,
 	},
 	vangogh_products.ApiProductsV2: {
 		IdProperty,
@@ -61,6 +63,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		GenresProperty,
 		VideoIdProperty,
 		OperatingSystemsProperty,
+		SlugProperty,
 	},
 }
 

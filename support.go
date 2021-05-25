@@ -44,7 +44,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		SeriesProperty,
 		VideoIdProperty,
 		OperatingSystemsProperty,
-		LanguageCodesProperty,
+		LanguageCodeProperty,
 	},
 	vangogh_products.Details: {
 		TitleProperty,

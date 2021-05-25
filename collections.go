@@ -24,7 +24,7 @@ const (
 	TagNameProperty           = "tag-name"
 	VideoIdProperty           = "video-id"
 	OperatingSystemsProperty  = "os"
-	LanguageCodesProperty     = "lang"
+	LanguageCodeProperty      = "lang-code"
 	LanguageNameProperty      = "lang-name"
 	SlugProperty              = "slug"
 	TextProperties            = "text"
@@ -53,7 +53,7 @@ func AllText() []string {
 		RatingProperty,
 		TagIdProperty,
 		OperatingSystemsProperty,
-		LanguageCodesProperty,
+		LanguageCodeProperty,
 		SlugProperty,
 	)
 }
@@ -108,7 +108,7 @@ func Digestible() []string {
 		GenresProperty,
 		FeaturesProperty,
 		SeriesProperty,
-		TagNameProperty,
-		LanguageNameProperty,
+		TagIdProperty,
+		LanguageCodeProperty,
 	}
 }

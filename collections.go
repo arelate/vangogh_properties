@@ -23,6 +23,7 @@ const (
 	TagIdProperty             = "tag"
 	TagNameProperty           = "tag-name"
 	VideoIdProperty           = "video-id"
+	MissingVideoUrlProperty   = "missing-video-url"
 	OperatingSystemsProperty  = "os"
 	LanguageCodeProperty      = "lang-code"
 	LanguageNameProperty      = "lang-name"

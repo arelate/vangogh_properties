@@ -27,19 +27,25 @@ func Expand(property string) []string {
 	return collapsedExpanded[property]
 }
 
-func ExpandAll(properties map[string]bool) map[string]bool {
-	//expanded := make([]string, 0, len(properties))
-	for prop, ok := range properties {
-		if !ok {
-			continue
-		}
+func ExpandAll(properties []string) []string {
+	expanded := make(map[string]bool, 0)
+
+	for _, prop := range properties {
 		if IsCollapsed(prop) {
 			for _, ep := range Expand(prop) {
-				properties[ep] = true
+				expanded[ep] = true
 			}
+		} else {
+			expanded[prop] = true
 		}
 	}
-	return properties
+
+	keys := make([]string, 0, len(expanded))
+	for ep, _ := range expanded {
+		keys = append(keys, ep)
+	}
+
+	return keys
 }
 
 func Collapse(property string) string {

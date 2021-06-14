@@ -111,5 +111,6 @@ func Digestible() []string {
 		SeriesProperty,
 		TagIdProperty,
 		LanguageCodeProperty,
+		OperatingSystemsProperty,
 	}
 }

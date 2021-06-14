@@ -20,4 +20,5 @@ replace (
 	github.com/arelate/vangogh_urls => ../vangogh_urls
 	github.com/arelate/vangogh_values => ../vangogh_values
 	github.com/boggydigital/froth => ../froth
+	github.com/boggydigital/kvas => ../kvas
 )

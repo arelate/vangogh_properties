@@ -10,7 +10,7 @@ func GetProperties(
 	id string,
 	reader *vangogh_values.ValueReader,
 	properties []string) (propValues map[string][]string, err error) {
-	supProps := IsSupported(reader.ProductType(), properties)
+	supProps := Supported(reader.ProductType(), properties)
 	value, err := reader.ReadValue(id)
 	return fillProperties(value, supProps), err
 }

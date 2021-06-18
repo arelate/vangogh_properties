@@ -6,3 +6,12 @@ func Searchable() []string {
 	searchable = append(searchable, Extracted()...)
 	return searchable
 }
+
+var fullMatch = map[string]bool{
+	LanguageCodeProperty: true,
+	SlugProperty:         true,
+}
+
+func FullMatch(property string) bool {
+	return fullMatch[property]
+}

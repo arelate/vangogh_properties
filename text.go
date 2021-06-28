@@ -22,5 +22,7 @@ func AllText() []string {
 		OperatingSystemsProperty,
 		LanguageCodeProperty,
 		SlugProperty,
+		GOGReleaseDate,
+		GlobalReleaseDate,
 	)
 }

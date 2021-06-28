@@ -29,6 +29,8 @@ const (
 	LanguageNameProperty       = "lang-name"
 	NativeLanguageNameProperty = "native-lang-name"
 	SlugProperty               = "slug"
+	GOGReleaseDate             = "gog-release-date"
+	GlobalReleaseDate          = "global-release-date"
 	TextProperties             = "text"
 	AllTextProperties          = "all-text"
 	ImageIdProperties          = "image-id"

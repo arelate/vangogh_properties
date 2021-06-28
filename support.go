@@ -22,6 +22,7 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		VideoIdProperty,
 		OperatingSystemsProperty,
 		SlugProperty,
+		GOGReleaseDate,
 	},
 	vangogh_products.ApiProductsV2: {
 		IdProperty,
@@ -45,12 +46,15 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		VideoIdProperty,
 		OperatingSystemsProperty,
 		LanguageCodeProperty,
+		GlobalReleaseDate,
+		GOGReleaseDate,
 	},
 	vangogh_products.Details: {
 		TitleProperty,
 		BackgroundProperty,
 		FeaturesProperty,
 		TagIdProperty,
+		GOGReleaseDate,
 	},
 	vangogh_products.StoreProducts: {
 		IdProperty,
@@ -64,6 +68,8 @@ var supportedProperties = map[vangogh_products.ProductType][]string{
 		VideoIdProperty,
 		OperatingSystemsProperty,
 		SlugProperty,
+		GlobalReleaseDate,
+		GOGReleaseDate,
 	},
 }
 

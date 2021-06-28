@@ -10,5 +10,6 @@ func Digestible() []string {
 		TagIdProperty,
 		LanguageCodeProperty,
 		OperatingSystemsProperty,
+		MissingVideoUrlProperty,
 	}
 }

@@ -4,6 +4,7 @@ import (
 	"github.com/arelate/gog_types"
 	"github.com/arelate/gog_urls"
 	"github.com/arelate/vangogh_values"
+	"time"
 )
 
 func GetProperties(
@@ -47,6 +48,10 @@ func getPropertyValues(value interface{}, property string) []string {
 		return getImageIdSlice(value.(gog_types.GalaxyBackgroundGetter).GetGalaxyBackground)
 	case GenresProperty:
 		return value.(gog_types.GenresGetter).GetGenres()
+	case GlobalReleaseDate:
+		return dateSlice(value.(gog_types.GlobalReleaseGetter).GetGlobalRelease)
+	case GOGReleaseDate:
+		return dateSlice(value.(gog_types.GOGReleaseGetter).GetGOGRelease)
 	case LanguageCodeProperty:
 		return value.(gog_types.LanguageCodesGetter).GetLanguageCodes()
 	case LogoProperty:
@@ -74,6 +79,18 @@ func getPropertyValues(value interface{}, property string) []string {
 	default:
 		return []string{}
 	}
+}
+
+func dateSlice(timestamper func() int64) []string {
+	dates := make([]string, 0)
+	if timestamper != nil {
+		val := timestamper()
+		if val > 0 {
+			date := time.Unix(val, 0)
+			dates = append(dates, date.Format("2006-01-02"))
+		}
+	}
+	return dates
 }
 
 func getSlice(stringer func() string) []string {
